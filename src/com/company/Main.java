@@ -23,13 +23,17 @@ public class Main {
 
     }
 
-    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
 
         if (gameOver == true) {
             int finalScore = score + (levelCompleted * bonus);
             finalScore += 2000;
             System.out.println("Your final score was " + finalScore);
+            return finalScore;
         }
+        return -1; // We changed "void" to "int" in this method to return data
+                   // When then would need to add "return" if the condition is true or false
+                   // "return finalScore" if true, "return -1" if false
 
     }
 }
